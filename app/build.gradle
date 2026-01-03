@@ -1,0 +1,98 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace "com.instruction.paperka20"
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.instruction.paperka20"
+        minSdk 23
+        targetSdk 35
+        versionCode 18
+        versionName "2.0.1"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        
+        // Поддержка устройств с размером страницы 16 КБ (Android 15+)
+        // AGP 8.13.0 автоматически включает поддержку 16 КБ и выравнивает нативные библиотеки
+        // Оставляем только основные архитектуры для уменьшения размера APK
+        // Для еще большего уменьшения размера можно оставить только 'arm64-v8a'
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a'
+        }
+    }
+
+    buildTypes {
+        debug {
+            // Для debug сборки можно использовать extractNativeLibs="true" для уменьшения размера
+            // Но это не поддерживает 16 КБ страницы
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    
+    // Разделение APK по архитектурам для уменьшения размера (опционально)
+    // Раскомментируйте, если нужно создавать отдельные APK для каждой архитектуры
+    /*
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'armeabi-v7a', 'arm64-v8a'
+            universalApk false
+        }
+    }
+    */
+    
+    // Поддержка устройств с размером страницы 16 КБ
+    // AGP 8.5.1+ (у нас 8.13.0) автоматически включает поддержку 16 КБ при сборке
+    // и корректно выравнивает нативные библиотеки под 16 КБ
+    packaging {
+        jniLibs {
+            useLegacyPackaging = false
+            // AGP 8.13.0 автоматически выравнивает все нативные библиотеки на 16 КБ
+            // Для библиотек из зависимостей может потребоваться дополнительная обработка
+        }
+        // Дополнительные настройки для правильной упаковки
+        resources {
+            excludes += ['META-INF/*']
+        }
+    }
+    
+    // Примечание: Если библиотеки из зависимостей не выровнены на 16 КБ,
+    // необходимо обновить библиотеку или использовать альтернативу.
+    // AGP не всегда может перевыровнять уже скомпилированные библиотеки из зависимостей.
+    // См. FIX_16KB_LIBRARIES.md для подробных решений.
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    // Android PDF Viewer - поддерживает 16 КБ страницы
+    // Заменено с com.github.mhiew:android-pdf-viewer на barteksc для поддержки 16 КБ
+    // Используем последний коммит из master ветки (JitPack соберет автоматически)
+    implementation 'com.github.barteksc:AndroidPdfViewer:master-SNAPSHOT'
+    implementation 'com.google.android.material:material:1.10.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    // Room database - обновлено до последней версии для поддержки 16 КБ страниц
+    // Версия 2.6.1 может содержать старые нативные библиотеки SQLite
+    // Обновлено до 2.7.0 для гарантированной поддержки 16 КБ
+    def room_version = "2.7.0"
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+}

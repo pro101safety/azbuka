@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    
+    <item
+        android:id="@+id/search"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="Поиск"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/privacy"
+        android:title="О приложении"/>
+
+    <item
+        android:id="@+id/contact"
+        android:title="Контакты"/>
+
+    <item
+        android:id="@+id/quiz"
+        android:title="Викторина по ОТ"/>
+
+</menu>
