@@ -81,10 +81,9 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 
-    // Android PDF Viewer - поддерживает 16 КБ страницы
-    // Заменено с com.github.mhiew:android-pdf-viewer на barteksc для поддержки 16 КБ
-    // Используем последний коммит из master ветки (JitPack соберет автоматически)
-    implementation 'com.github.barteksc:AndroidPdfViewer:master-SNAPSHOT'
+    // Android PDF Viewer — используем форк mhiew из Maven Central (стабильный артефакт)
+    // Ветка barteksc с JitPack недоступна по тегу, поэтому переходим на опубликованную версию
+    implementation 'com.github.mhiew:android-pdf-viewer:3.2.0-beta.3'
     implementation 'com.google.android.material:material:1.10.0'
     implementation 'androidx.cardview:cardview:1.0.0'
 

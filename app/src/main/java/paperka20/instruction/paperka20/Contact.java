@@ -23,6 +23,8 @@ public class Contact extends AppCompatActivity {
         TextView textEmail = findViewById(R.id.textEmail);
         TextView textPhone1 = findViewById(R.id.textPhone1);
         TextView textPhone2 = findViewById(R.id.textPhone2);
+        View cardPlanner = findViewById(R.id.cardPlanner);
+        View cardPapera = findViewById(R.id.cardPapera);
         
         if (textWebsite != null) {
             textWebsite.setMovementMethod(LinkMovementMethod.getInstance());
@@ -35,6 +37,18 @@ public class Contact extends AppCompatActivity {
         }
         if (textPhone2 != null) {
             textPhone2.setMovementMethod(LinkMovementMethod.getInstance());
+        }
+
+        // Play Store promos
+        if (cardPlanner != null) {
+            cardPlanner.setOnClickListener(v ->
+                openUrl("https://play.google.com/store/apps/details?id=by.instruction.planer")
+            );
+        }
+        if (cardPapera != null) {
+            cardPapera.setOnClickListener(v ->
+                openUrl("https://play.google.com/store/apps/details?id=by.instruction.papera")
+            );
         }
 
         // Handle Telegram Channel link
@@ -71,6 +85,11 @@ public class Contact extends AppCompatActivity {
 
     private void openTelegramUser(String username) {
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://t.me/" + username));
+        startActivity(intent);
+    }
+
+    private void openUrl(String url) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         startActivity(intent);
     }
 }

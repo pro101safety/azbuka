@@ -63,7 +63,8 @@ public class MainActivity extends AppCompatActivity {
             ViewCompat.setOnApplyWindowInsetsListener(rootView, (v, insets) -> {
                 Insets sysBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
                 float density = getResources().getDisplayMetrics().density;
-                int extraTop = (int) Math.round(46f * density); // add 46dp visual gap
+                // Смещаем контент чуть ниже экшен-бара: ~68dp дополнительного отступа
+                int extraTop = (int) Math.round(68f * density);
                 v.setPadding(sysBars.left, sysBars.top + extraTop, sysBars.right, sysBars.bottom);
                 return insets;
             });
