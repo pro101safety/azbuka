@@ -19,11 +19,11 @@
             android:id="@+id/cardPlanner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
             android:layout_marginBottom="12dp"
-            app:cardCornerRadius="14dp"
-            app:cardElevation="6dp"
-            app:cardUseCompatPadding="true"
-            app:cardBackgroundColor="#0F9D58">
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#FFFFFF">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -37,7 +37,7 @@
                     android:text="PRO101 ПЛАНЕР"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#333333" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -45,7 +45,7 @@
                     android:layout_marginTop="6dp"
                     android:text="Скачай бесплатно PRO101 ПЛАНЕР"
                     android:textSize="15sp"
-                    android:textColor="#E6FFFFFF" />
+                    android:textColor="#666666" />
 
             </LinearLayout>
 
@@ -57,10 +57,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="12dp"
-            app:cardCornerRadius="14dp"
-            app:cardElevation="6dp"
-            app:cardUseCompatPadding="true"
-            app:cardBackgroundColor="#4285F4">
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="#FFFFFF">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -74,7 +73,7 @@
                     android:text="ПАПЕРКА по охране труда"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#333333" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -82,7 +81,7 @@
                     android:layout_marginTop="6dp"
                     android:text="ПАПЕРКА по охране труда"
                     android:textSize="15sp"
-                    android:textColor="#E6FFFFFF" />
+                    android:textColor="#666666" />
 
             </LinearLayout>
 
