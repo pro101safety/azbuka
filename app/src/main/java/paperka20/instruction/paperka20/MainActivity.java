@@ -249,17 +249,14 @@ public class MainActivity extends AppCompatActivity {
         topicsList.add(new Topics("1.ЧЕК-ЛИСТ", "t180"));
         chapterList.add(new Chapter("18. ПРИЗНАКИ ИНСУЛЬТА",topicsList));
 
-        // бери за основу блока газоопасные
-
-        //chapter 9 t91~99
-        //topicsList=new ArrayList<>();
-        //topicsList.add(new Topics("1.ПЕРВООЧЕРЕДНЫЕ ДЕЙСТВИЯ", "t91"));
-        //topicsList.add(new Topics("2.МИКРОТРАВМА", "t92"));
-        //topicsList.add(new Topics("3.НЕ ОТНОСЯЩИЙСЯ К ТЯЖЕЛОМУ НС", "t93"));
-        //topicsList.add(new Topics("4.ОТНОСЯЩИЙСЯ К ТЯЖЕЛОМУ НС", "t94"));
-        //topicsList.add(new Topics("5.СМЕРТЕЛЬНЫЙ НС", "t95"));
-        //topicsList.add(new Topics("6.ГРУППОВОЙ НС", "t105"));
-        //chapterList.add(new Chapter("10. ДЕЙСТВИЯ ПРИ НС",topicsList));
+        //chapter 19 t190
+        topicsList=new ArrayList<>();
+        topicsList.add(new Topics("1.Правила безопасности в гололед", "t190"));
+        topicsList.add(new Topics("2.Профилактика обморожений", "t191"));
+        topicsList.add(new Topics("3.Опасности тонкого льда", "t192"));
+        topicsList.add(new Topics("4.Правила поведения на льду", "t193"));
+        topicsList.add(new Topics("5.На автотрассе зимой", "t194"));
+        chapterList.add(new Chapter("19. БЕЗОПАСНОСТЬ В МОРОЗ",topicsList));
 
         sendData();
 
