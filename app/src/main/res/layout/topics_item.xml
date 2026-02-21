@@ -12,6 +12,7 @@
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
+        app:cardBackgroundColor="@color/main_list_card_background"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
         android:layout_width="match_parent"
@@ -20,7 +21,7 @@
         <TextView
             android:id="@+id/topicTitle"
             android:layout_marginLeft="10dp"
-            android:textColor="@color/black"
+            android:textColor="@color/main_list_child_text"
             android:textSize="14sp"
             android:textStyle="normal"
             android:text="Образец"

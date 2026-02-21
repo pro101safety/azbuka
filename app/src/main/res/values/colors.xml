@@ -12,5 +12,8 @@
     <color name="yellow_category">#FFEB3B</color>
     <color name="orange_result">#FF9800</color>
     <color name="green_button">#4CAF50</color>
+    <color name="main_list_group_text">#FF000000</color>
+    <color name="main_list_child_text">#FF000000</color>
+    <color name="main_list_card_background">#FFFFFFFF</color>
 
 </resources>

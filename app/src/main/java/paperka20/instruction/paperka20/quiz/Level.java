@@ -2,6 +2,7 @@ package paperka20.instruction.paperka20.quiz;
 
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Ignore;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
@@ -29,6 +30,7 @@ public class Level {
     public Level() {
     }
     
+    @Ignore
     public Level(int categoryId, int levelNumber, int questionsPerLevel) {
         this.categoryId = categoryId;
         this.levelNumber = levelNumber;

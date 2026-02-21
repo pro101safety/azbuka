@@ -3,17 +3,17 @@ plugins {
 }
 
 android {
-    namespace "com.instruction.paperka20"
-    compileSdk 35
+    namespace = "com.instruction.paperka20"
+    compileSdk = 35
 
     defaultConfig {
-        applicationId "com.instruction.paperka20"
-        minSdk 23
-        targetSdk 35
-        versionCode 18
-        versionName "2.0.1"
+        applicationId = "com.instruction.paperka20"
+        minSdk = 23
+        targetSdk = 35
+        versionCode = 20
+        versionName = "2.0.2"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         
         // Поддержка устройств с размером страницы 16 КБ (Android 15+)
         // AGP 8.13.0 автоматически включает поддержку 16 КБ и выравнивает нативные библиотеки
@@ -30,7 +30,7 @@ android {
             // Но это не поддерживает 16 КБ страницы
         }
         release {
-            minifyEnabled false
+            minifyEnabled = false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -68,8 +68,8 @@ android {
     // AGP не всегда может перевыровнять уже скомпилированные библиотеки из зависимостей.
     // См. FIX_16KB_LIBRARIES.md для подробных решений.
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 }
 

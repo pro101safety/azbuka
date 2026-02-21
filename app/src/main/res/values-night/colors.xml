@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="main_list_group_text">#FFFFFFFF</color>
+    <color name="main_list_child_text">#FFFFFFFF</color>
+    <color name="main_list_card_background">#FF1E1E1E</color>
+</resources>

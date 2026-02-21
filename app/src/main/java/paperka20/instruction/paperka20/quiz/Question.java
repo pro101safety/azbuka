@@ -2,6 +2,7 @@ package paperka20.instruction.paperka20.quiz;
 
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Ignore;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
@@ -32,6 +33,7 @@ public class Question {
     public Question() {
     }
     
+    @Ignore
     public Question(int categoryId, int level, String questionText, 
                    String option1, String option2, String option3, String option4, 
                    int correctAnswer, String explanation) {

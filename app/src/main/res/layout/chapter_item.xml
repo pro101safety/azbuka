@@ -10,6 +10,7 @@
         android:layout_width="398dp"
         android:layout_height="50dp"
         android:layout_margin="6dp"
+        app:cardBackgroundColor="@color/main_list_card_background"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
         >
@@ -35,7 +36,7 @@
                 android:layout_marginLeft="10dp"
                 android:gravity="center_vertical"
                 android:text="Образец заголовка"
-                android:textColor="@color/black"
+                android:textColor="@color/main_list_group_text"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 

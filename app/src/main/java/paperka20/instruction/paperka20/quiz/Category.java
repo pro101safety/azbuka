@@ -1,6 +1,7 @@
 package paperka20.instruction.paperka20.quiz;
 
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "categories")
@@ -15,6 +16,7 @@ public class Category {
     public Category() {
     }
     
+    @Ignore
     public Category(String name, String description, int iconResId) {
         this.name = name;
         this.description = description;
